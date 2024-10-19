@@ -1,17 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22">
+<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ebe7e0;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="420.0" minWidth="10.0" prefWidth="404.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="299.0" minWidth="10.0" prefWidth="196.0" />
   </columnConstraints>
   <rowConstraints>
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
+   <children>
+      <GridPane fx:id="grid" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefWidth="300.0" stylesheets="@styles.css">
+         <children>
+            <TextField fx:id="cell00" />
+            <TextField fx:id="cell01" GridPane.columnIndex="1" />
+            <TextField fx:id="cell02" GridPane.columnIndex="2" />
+            <TextField fx:id="cell10" GridPane.rowIndex="1" />
+            <TextField fx:id="cell11" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="cell12" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="cell03" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="300.0" GridPane.columnIndex="3" />
+            <TextField fx:id="cell04" GridPane.columnIndex="4" />
+            <TextField fx:id="cell05" GridPane.columnIndex="5" />
+            <TextField fx:id="cell13" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="cell14" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <TextField fx:id="cell15" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <TextField fx:id="cell20" GridPane.rowIndex="2" />
+            <TextField fx:id="cell21" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="cell22" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="cell30" GridPane.rowIndex="3" />
+            <TextField fx:id="cell31" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="cell32" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="cell23" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <TextField fx:id="cell24" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <TextField fx:id="cell25" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <TextField fx:id="cell33" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <TextField fx:id="cell34" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <TextField fx:id="cell35" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <TextField fx:id="cell40" GridPane.rowIndex="4" />
+            <TextField fx:id="cell41" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="cell42" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <TextField fx:id="cell50" GridPane.rowIndex="5" />
+            <TextField fx:id="cell51" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="cell52" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <TextField fx:id="cell43" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <TextField fx:id="cell44" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <TextField fx:id="cell45" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <TextField fx:id="cell53" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <TextField fx:id="cell54" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <TextField fx:id="cell55" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+      </GridPane>
+      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #44749d;" GridPane.columnIndex="1" />
+   </children>
 </GridPane>
