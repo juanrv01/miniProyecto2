@@ -21,30 +21,42 @@ public class SudokuModel {
             }
         }
 
-        // Llama al metodo recursivo para llenar el tablero de acuerdo con las reglas
-        fillBoard();
+        // Llama al metodo recursivo de backtracking para llenar el tablero
+        fillBoard(0, 0);
     }
 
-    // Metodo para llenar el tablero aleatoriamente con valores válidos
-    private boolean fillBoard() {
+    // Metodo recursivo de backtracking para llenar el tablero
+    private boolean fillBoard(int row, int col) {
+        // Si llegamos al final del tablero, hemos terminado
+        if (row == 6) {
+            return true;
+        }
+
+        // Si llegamos al final de una fila, pasamos a la siguiente
+        int nextRow = (col == 5) ? row + 1 : row;
+        int nextCol = (col == 5) ? 0 : col + 1;
+
         ArrayList<Integer> numbers = new ArrayList<>();
         for (int i = 1; i <= 6; i++) {
             numbers.add(i);
         }
+        Collections.shuffle(numbers); // Mezclar los números para hacer la generación aleatoria
 
-        // Llenar fila por fila
-        for (int row = 0; row < 6; row++) {
-            for (int col = 0; col < 6; col++) {
-                Collections.shuffle(numbers); // Mezcla los números en cada iteración
-                for (int num : numbers) {
-                    if (isValidPlacement(row, col, num)) {
-                        board.get(row).set(col, num); // Coloca el número si es válido
-                        break;
-                    }
+        // Probar cada número en la celda actual
+        for (int num : numbers) {
+            if (isValidPlacement(row, col, num)) {
+                board.get(row).set(col, num); // Coloca el número
+
+                // Llamada recursiva para intentar llenar la siguiente celda
+                if (fillBoard(nextRow, nextCol)) {
+                    return true; // Si se llena correctamente el resto del tablero, retorna verdadero
                 }
+
+                // Si falla, deshacemos el número colocado
+                board.get(row).set(col, 0);
             }
         }
-        return true;
+        return false; // No se pudo colocar un número válido en esta celda
     }
 
     // Verificar si un número puede ser colocado en una celda sin romper las reglas
