@@ -22,17 +22,3 @@ public class main extends Application {
 
 
 
-/*
-public class main extends SudokuModel {
-    // Declare sudoku as a class variable
-    static SudokuModel sudoku;
-
-    public static void main(String[] args) {
-        // Initialize sudoku in the main method
-        sudoku = new SudokuModel();
-        sudoku.printBoard();
-    }
-
-    // ... rest of your code ...
-}
-*/

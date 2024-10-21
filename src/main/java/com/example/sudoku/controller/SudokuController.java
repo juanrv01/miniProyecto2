@@ -1,39 +1,49 @@
 package com.example.sudoku.controller;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.geometry.HPos;
-import javafx.geometry.VPos;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-public class SudokuController {
+public class SudokuController implements ISudokuController {
 
     @FXML
     private VBox sudokuBase;
 
     @FXML
     void helpButton(ActionEvent event) {
-        System.out.println("Ayudando al jugador");
+        showHelp();
     }
 
-    @FXML
-    public void initialize() {
+    @Override
+    public void initializeGame() {
         // Crear el GridPane
         GridPane grid = new GridPane();
+        grid.getStyleClass().add("custom-grid");
+
         for (int row = 0; row < 6; row++) {
             for (int col = 0; col < 6; col++) {
-                TextField cell = createTextField();
+                TextField cell = createTextField(row, col);
                 grid.add(cell, col, row);
             }
         }
         sudokuBase.getChildren().add(grid);
-
     }
 
-    private TextField createTextField() {
+    @Override
+    public void showHelp() {
+        System.out.println("Ayudando al jugador");
+    }
+
+    @Override
+    public void handleCellInput(int row, int col, String value) {
+        // Aquí puedes manejar la lógica para la entrada de cada celda
+        System.out.println("Celda [" + row + ", " + col + "] valor: " + value);
+    }
+
+    private TextField createTextField(int row, int col) {
         TextField textField = new TextField();
         textField.setPrefWidth(50); // Tamaño del TextField
         textField.setMaxWidth(50);
@@ -44,14 +54,27 @@ public class SudokuController {
             // Si el input no es un número entre 1 y 6, o si ya tiene un carácter, cancelar el evento
             if (!input.matches("[1-6]") || textField.getText().length() >= 1) {
                 event.consume();
+            } else {
+                handleCellInput(row, col, input); // Manejar la entrada
             }
         });
 
         // Añadir el estilo del archivo CSS al TextField
         textField.getStyleClass().add("text-field");
 
+        textField.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) { // Cuando el TextField es seleccionado
+                textField.getStyleClass().add("selected");
+            } else { // Cuando el TextField pierde el enfoque
+                textField.getStyleClass().remove("selected");
+            }
+        });
+
         return textField;
     }
 
+    @FXML
+    public void initialize() {
+        initializeGame(); // Llamar al metodo de inicialización
+    }
 }
-

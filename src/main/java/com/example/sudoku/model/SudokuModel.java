@@ -1,18 +1,19 @@
 package com.example.sudoku.model;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class SudokuModel {
+public class SudokuModel implements ISudokuModel {
 
     private ArrayList<ArrayList<Integer>> board;
 
     public SudokuModel() {
         board = new ArrayList<>();
-        generateSudoku();
+        generateSudoku(); // Generar el Sudoku al inicializar el modelo
     }
 
-    // Metodo para generar un Sudoku 6x6 con subcuadrículas de 2x3
-    private void generateSudoku() {
+    @Override
+    public ArrayList<ArrayList<Integer>> generateSudoku() {
         // Inicializa el tablero con filas vacías
         for (int i = 0; i < 6; i++) {
             board.add(new ArrayList<>());
@@ -23,6 +24,7 @@ public class SudokuModel {
 
         // Llama al metodo recursivo de backtracking para llenar el tablero
         fillBoard(0, 0);
+        return board; // Devuelve el tablero generado
     }
 
     // Metodo recursivo de backtracking para llenar el tablero
@@ -59,8 +61,8 @@ public class SudokuModel {
         return false; // No se pudo colocar un número válido en esta celda
     }
 
-    // Verificar si un número puede ser colocado en una celda sin romper las reglas
-    private boolean isValidPlacement(int row, int col, int num) {
+    @Override
+    public boolean isValidPlacement(int row, int col, int num) {
         // Verificar la fila
         for (int i = 0; i < 6; i++) {
             if (board.get(row).get(i) == num) {
@@ -89,12 +91,12 @@ public class SudokuModel {
         return true; // El número puede ser colocado
     }
 
-    // Metodo para obtener el tablero
+    @Override
     public ArrayList<ArrayList<Integer>> getBoard() {
         return board;
     }
 
-    // Metodo para imprimir el tablero en la consola (opcional)
+    @Override
     public void printBoard() {
         for (ArrayList<Integer> row : board) {
             System.out.println(row);
