@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0acf7665-d0c9-45c5-b6c3-64b670b6d870" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sudoku/controller/ISudokuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sudoku/controller/ISudokuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sudoku/controller/SudokuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sudoku/controller/SudokuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sudoku/model/ISudokuModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sudoku/model/ISudokuModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sudoku/model/SudokuModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sudoku/model/SudokuModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/sudoku/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/sudoku/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +85,7 @@
       <workItem from="1729618346021" duration="2181000" />
       <workItem from="1729620926026" duration="50000" />
       <workItem from="1729620995243" duration="7000" />
-      <workItem from="1729621614003" duration="7711000" />
+      <workItem from="1729621614003" duration="8588000" />
     </task>
     <servers />
   </component>

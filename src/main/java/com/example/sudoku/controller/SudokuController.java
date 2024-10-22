@@ -8,6 +8,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
+
+import java.util.Objects;
 import java.util.Random;
 import javafx.scene.Node;
 
@@ -38,7 +40,7 @@ public class SudokuController implements ISudokuController {
         }
         sudokuBase.getChildren().add(grid);
 
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 12; i++) {
             showHelp();
         }
     }
@@ -64,12 +66,38 @@ public class SudokuController implements ISudokuController {
     @Override
     public void showHelp() {
         Random random = new Random();
-        int randomRow = random.nextInt(5);
-        int randomCol = random.nextInt(5);
-        String aux = sudokuModel.getBoard().get(randomRow).get(randomCol).toString();
-        setTextFieldValue(randomRow, randomCol,aux);
+        boolean helpGiven = false;
 
+        while (!helpGiven) {
+            // Generar posiciones aleatorias
+            int randomRow = random.nextInt(6); // Cambié a 6 porque las filas/columnas van de 0 a 5
+            int randomCol = random.nextInt(6);
+
+            // Obtener el valor correcto del modelo
+            String correctValue = sudokuModel.getBoard().get(randomRow).get(randomCol).toString();
+
+            // Acceder al TextField en la posición (randomRow, randomCol)
+            TextField cell = getTextField(randomRow, randomCol);
+
+            // Verificar si la celda está vacía o tiene un valor incorrecto
+            if (cell != null && (cell.getText().isEmpty() || !cell.getText().equals(correctValue))) {
+                // Si la celda está vacía o el valor es incorrecto, mostrar la ayuda
+                setTextFieldValue(randomRow, randomCol, correctValue);
+                helpGiven = true; // Romper el ciclo una vez que se dé la ayuda
+            }
+        }
     }
+
+    // Método para obtener un TextField de una celda específica
+    private TextField getTextField(int row, int col) {
+        for (Node node : grid.getChildren()) {
+            if (GridPane.getRowIndex(node) == row && GridPane.getColumnIndex(node) == col && node instanceof TextField) {
+                return (TextField) node; // Devuelve el TextField en esa posición
+            }
+        }
+        return null; // Si no encuentra el TextField, devuelve null
+    }
+
 
     @Override
     public void handleCellInput(int row, int col, String value) {
