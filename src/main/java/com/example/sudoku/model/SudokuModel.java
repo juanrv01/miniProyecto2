@@ -5,11 +5,14 @@ import java.util.Collections;
 
 public class SudokuModel implements ISudokuModel {
 
-    private ArrayList<ArrayList<Integer>> board;
+    private ArrayList<ArrayList<Integer>> board,attempt;
 
     public SudokuModel() {
         board = new ArrayList<>();
+        attempt = new ArrayList<>();
         generateSudoku(); // Generar el Sudoku al inicializar el modelo
+        generateEmptySudoku();
+
     }
 
     @Override
@@ -25,6 +28,16 @@ public class SudokuModel implements ISudokuModel {
         // Llama al metodo recursivo de backtracking para llenar el tablero
         fillBoard(0, 0);
         return board; // Devuelve el tablero generado
+    }
+
+    public ArrayList<ArrayList<Integer>> generateEmptySudoku() {
+        for (int i = 0; i < 6; i++) {
+            attempt.add(new ArrayList<>());
+            for (int j = 0; j < 6; j++) {
+                attempt.get(i).add(0); // Llena el tablero con ceros temporalmente
+            }
+        }
+        return attempt;
     }
 
     // Metodo recursivo de backtracking para llenar el tablero
@@ -94,6 +107,10 @@ public class SudokuModel implements ISudokuModel {
     @Override
     public ArrayList<ArrayList<Integer>> getBoard() {
         return board;
+    }
+
+    public ArrayList<ArrayList<Integer>> getAttempt() {
+        return attempt;
     }
 
     @Override
