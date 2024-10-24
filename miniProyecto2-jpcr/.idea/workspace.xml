@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0acf7665-d0c9-45c5-b6c3-64b670b6d870" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/sudoku/controller/ISudokuController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/sudoku/controller/SudokuController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/sudoku/main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/sudoku/model/ISudokuModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/sudoku/model/SudokuModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/sudoku/view/SudokuStage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/com/example/sudoku/main-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/com/example/sudoku/styles.css" beforeDir="false" />
-    </list>
+    <list default="true" id="0acf7665-d0c9-45c5-b6c3-64b670b6d870" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,7 +85,7 @@
       <workItem from="1729620995243" duration="7000" />
       <workItem from="1729621614003" duration="8588000" />
       <workItem from="1729783231926" duration="291000" />
-      <workItem from="1729788615735" duration="5395000" />
+      <workItem from="1729788615735" duration="5551000" />
     </task>
     <servers />
   </component>
